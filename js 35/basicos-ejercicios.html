@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Lógica de Programación ( 2 / 10 )</title>
+</head>
+<body>
+    <h1>Ejercicios de Programación en JavaScript</h1>
+    <script>
+        /*1 Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.*/
+        /*function contarCaracteres(cadena=""){
+            if (cadena){
+                console.warn("No ingresaste ninguna cadena");
+            } else{
+                console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+            }
+        }*/
+        const contarCaracteres=(cadena="")=>
+            (!cadena)
+                ?console.warn("No ingresaste ninguna cadena")
+                :console.info(`La cadena"${cadena}" tiene ${cadena.length} caracteres`);
+
+        //contarCaracteres();
+        //contarCaracteres("Hola Mundo");
+
+        /*2 Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".*/
+        const recortarTexto=(cadena="",longitud=undefined)=>
+        (!cadena)
+            ?console.warn("No ingresaste una cadena de texto")
+            :(longitud===undefined)
+                ?console.warn("No ingresaste la longitud para recortar el texto")
+                :console.info(cadena.slice(0,longitud))
+        //recortarTexto("Hola Mundo",4);
+        //recortarTexto(); 
+        //recortarTexto("Hola Mundo");
+        //recortarTexto("",5);   
+        
+        /*3 Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].*/
+        const cadenaAArreglo=(cadena="",separador=undefined)=>
+        (!cadena)
+            ?console.warn("No ingresaste el caracter separador")
+            :(separador===undefined)
+                ?console.warn("No ingresaste el caracter separador")    
+                :console.info(cadena.split(separador));
+        //cadenaAArreglo("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque est, lobortis auctor quam et, ultricies maximus nisi. Nullam molestie condimentum pretium. Maecenas ac mi." ); 
+        //cadenaAArreglo("Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic",",");
+		//cadenaAArreglo();
+		//cadenaAArreglo("Hola mundo");
+		//cadenaAArreglo("","-");
+
+        /*4 Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.*/
+		const repetirTexto=(texto="",veces=undefined)=>{
+			if (!texto) return console.warn("No ingresaste un texto");
+
+			if (veces===undefined) return console.warn("No ingresaste el numero de veces a repetir el texto");
+
+			if (veces===0) return console.error("El numero de veces no puede ser 0");
+
+			if (Math.sign(veces)===undefined) return console.error("El numero de veces no puede ser negativo");
+
+			for (let i=1;i<= veces;i++) console.info(`${texto},${i}`);
+		}
+
+		repetirTexto("Hola Mundo",3);
+		repetirTexto("Hola Mundo",0);
+		repetirTexto("Hola Mundo",-20);
+		repetirTexto("",20);
+		repetirTexto("Hola Mundo");
+
+    </script>
+</body>
+</html>

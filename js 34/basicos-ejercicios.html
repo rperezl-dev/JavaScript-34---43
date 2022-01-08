@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Lógica de Programación ( 1 / 10 )</title>
+</head>
+<body>
+  <script>
+    /*1 Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.*/
+    //Solucion 1
+      let cadena = "Hola mundo";
+      function contarCaracteres(c) {
+        (typeof c === "string") ? console.log("El numero de caracteres de la cadena ingresada es: " + c.length) : console.log("Debes ingresar una cadena de texto");
+      }
+      contarCaracteres("caracteres en esta cadena");
+
+    /*2 Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".*/
+    //Solucion 2
+      function recortarCaracteres(c, n) {
+        if (typeof c === "string") {
+          if (isNaN(n)) {
+            console.log("Tu segundo parametro debe ser un numero entero");
+          } else {
+            console.log(c.slice(0, n));
+          }
+        } else {
+          console.log("Debes ingresar una cadena");
+        }
+      }
+      recortarCaracteres("Resultado de la cadena(esto no debe aparecer)", 22);
+
+    /*3 Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].*/
+    //Solucion 3
+    function separarCaracteres(c) {
+      if (typeof c === "string") {
+        let arreglo = c.split([" "]);
+        console.log(arreglo);
+      } else {
+        console.log("Debes ingresar una cadena");
+      }
+    }
+    separarCaracteres("hola que tal");
+    
+    /*4 Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.*/
+    //Solucion 4
+    function repetirTexto(c, n) {
+      if (typeof c === "string") {
+        if (isNaN(n)) {
+          console.log("Tu segundo parametro debe ser un numero entero");
+        } else {
+          let i = 0;
+          while (i < n) {
+            console.log("Hola mundo");
+            i++
+          }
+        }
+      } else {
+        console.log("Debes ingresar una cadena");
+      }
+    }
+    repetirTexto("Hola iteraciones", 3);
+  </script>
+</body>
+</html>
